@@ -1,0 +1,1649 @@
+=== raising ===
+
+To je veľmi dobrý smer.
+LEE Digital Fundraising
+znie:
+enterprise
+dôveryhodne
+neutrálne
+nie striktne charity-only
+umožňuje creator/startup/community model
+A hlavne:
+neuzamyká ťa do
+crowdfunding startup only
+segmentu.
+Odporúčaná architektúra MVP
+Minimalistická + škálovateľná.
+Keďže ideš:
+JetEngine
+CCT
+frontend
+škálovanie
+append-only logiku
+tak určite:
+NIE WordPress posts ako core
+core dáta držať v CCT
+WP použiť iba ako shell/frontend
+CORE ENTITY MODEL (MVP)
+1. campaigns
+Hlavná entita kampane.
+CCT: lee_campaigns
+status
+title
+slug
+excerpt
+content
+featured_image
+gallery
+goal_amount
+current_amount
+currency
+lf_date
+end_date
+owner_id
+organization_name
+location
+website
+is_featured
+is_verified
+views
+donors_count
+created_at
+updated_at
+2. creators
+Profil tvorcu / organizácie / startupu.
+CCT: lee_creators
+type
+name
+slug
+bio
+avatar
+cover
+email
+phone
+website
+facebook
+instagram
+linkedin
+verified
+created_at
+updated_at
+3. donations
+Transakcie.
+CCT: lee_donations
+campaign_id
+creator_id
+donor_name
+donor_email
+amount
+currency
+payment_status
+payment_gateway
+is_anonymous
+created_at
+4. updates
+Novinky ku kampani.
+CCT: lee_updates
+campaign_id
+title
+content
+image
+created_at
+TAXONÓMIE
+Tu to neprehnať.
+campaign_types
+Hlavné kategórie.
+Startupy
+Komunita
+Vzdelávanie
+Technológie
+Kultúra
+Pomoc
+Zdravie
+Neziskové projekty
+Digitálne produkty
+Lokálne projekty
+campaign_tags
+Web
+Mobilná aplikácia
+Hudba
+Video
+Študenti
+Open Source
+Komunita
+Startup
+Umenie
+RELÁCIE
+To je celé.
+Nepotrebuješ viac pre MVP.
+FRONTEND ŠTRUKTÚRA
+Homepage
+Hero
+Featured campaigns
+Categories
+Newest camp!
+How it works
+Success stories
+CTA
+Hero
+Goal progress
+Gallery
+Story
+Updates
+Donors
+Creator
+.4file
+Related c
+Pr    #DAvatar
+Bio
+Socials
+Stats
+MINIMÁLNE STATUSY
+# us
+draft
+Ving
+active
+completed
+expired
+rejected
+Dona
+; paid
+fail
+fund
+.UFRONTEND TEXTOVÉ BLOKY (REALISTIC LOREM)
+HERO
+Title
+Podporte digitálne projekty a ko
+né iniciatívy
+Desc
+Platforma pre
+k!c
+ívnych!h jektov, s
+ít a
+.priešení s transparentnou po
+ou a jednoduchým financovaním.
+SAMPLE CAMPAIGNS
+(Vývoj eduk
+nej mobil
+aplik!
+školy
+Ex&
+moder!#Pvzdelávanie so zamer
+e zručnosti študentov základných škôl.
+Title
+K!2
+štúdio
+mlad
+24tvorcov obsahu
+Pa;
+e vide
+odukciu,!U
+cast!
+Khbu dostupný začínajúcim
+om a)
+m5!
+0Open-source p23
+správ
+(brovoľníkAh
+fu"
+kaA[.
+HOW IT WORKA8
+Vy!U
+dajte9a
+, cieľ]
+íbeu
+Získ
+ijím
+Realizu
+e i
+!iK
+A3( priebehu r
+DÔLEŽITÉ
+NECHOĎ zatiaľ do:
+subscripLs
+marketplace
+escrow
+tokeny
+equity
+LTo všetko patrí a
+V2/V3a
+trategicky najlepší MVP názov tabuliek
+ors
+up&]e
+prise
+teAa
+bez chaosu.
+stránok
+Pre v
+0by som išiel
+mal
+CA:
+osť
+8 navigácia
+-first
+dneskôr
+PUBLIC PAGES
+1. H
+Sekciey
+ed Ca]
+It W
+Newest
+Filter
+Popular
+3. Single
+/slug2
+Bar
+y"n
+e Box
+teg)0
+y    y
+Alebo:
+5. CM=-
+O*F
+LinkJ
+USER I
+e-1
+FMq
+)(ulár.
+MVP:"
+Image
+8. Dashboard
+Použí
+io"
+9. EdiY
+10. About
+/how-it-
+1A ontact
+13. FAQ
+/faq
+14. Terms
+15. Privacy
+VOLITEĽNÉ (NESKÔR)
+NEPRIDÁVAŤ TERAZ:
+/P/messages
+/chat
+/inve
+IDE
+AmTNAVIGÁCIA
+Header
+Logo"
+A?U2
+Fooa)[!
+URL ARCHITEKTÚRA
+Drž to krátke.
+GOOD
+mH)6
+ies
+BAD
+-pA
+ct-    *
+/public
+ODPORÚČANIE PRE JETENGINE
+CCTI
+WP POSTS
+Blog/New6
+MENU!
+Domov
+K! órie
+Ako!Q
+funguje
+SEO STRÁN
+aviť.
+Ub1G
+_types
+é k
+Technológie
+(Kultúra
+kty
+Web
+á*z
+Hudba
+S    0
+Umenie
+)    J
+)    4
+.    O
+'5o('
+4+2
+J2-
+iiii
+iiiii
+"'(A*
+!sZ
+*6iijjjjjjjjjjjjjjjk
+;    #
+j6*
+2026-05-23T03:01:45+0200
+kkkkkkkkk
+P5X
+dkj
+8&f
+8"f
+52f
+8'2
+0+@
+D 6D(
+#ZC(
+!#Y
+CFY
+R9Y
+kkkk
+VF)#h@0D
+bbF
+-RG
+jij
+jijj
+jijjjjjjjjjjjjjiiiiiiiiii
+jiijijjiikii
+!hb
+(af
+HCk
+I"r*cAR
+Europe/Bratislavaj
+(    *
+h=D
+B!F
+0#B
+#Bz
+&B6
+JQ#
+'B9
+0z:
+&*A
+k*-
+)(W(
+G'0
+.    0
+iiiii
+V9b
+ii    4
+iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+Table 1
+b?1
+"J2
+"Li
+UV;/
+jO,
+F3!
+Np,p
+(    (
+0    0
+.J1
+aR-
+-!!
+4iiiij
+i:ZU
+!*q
+@iiiiiiiiiiiiiiiiiiiiiq
+,iiii)
+Hi0
+B    Table 1-1s
+A"*
+E"J3
+b J
+aR-
+i"Zf'
+(*5
+j:R
+!*L
+ijjiiiiiiiiijiiL
+,jjjj)jj
+K*L
+i1J2
+=2Z
+/.@
+K8Jd
+(    (
+0    0
+EqJ
+aR-
+j"RXF
+RT:
+B*/
+d./
+jjjjjjjjjjjjjjj/
+,jjjj)jj
+(jb
+j6/
+?JeW*/
+@J2
+N7?
+j:!
+(    (
+0    0
+!66
+EsJ7
+jjj
+NoT
+1*8
+4jjjjj8
+3!"!
+,jjjj)jj
+j6!
+NV7
+_=J
+SJe
+íS"
+E!J+
+aJS
+aR-
+j"+
+Au8j
+:AE
+NMds
+(.@
+&    &    &    &    &    &    &    &    &&
+z&    k
+(&    &    &    &    &    &    &    &    2&
+&    &    &    &    &    &    &    &    n&    Gnr
+(((((((((
+C+C+C+C+C+C+C+C+
+zdravie
+krizova-pomoc
+Vybrať Dobročinnosť
+mladez
+Vybrať Zdravie
+ekologia
+Vybrať Zvieratá
+komunita
+Vybrať Edukácia
+edukacia
+Vybrať Komunita
+Vybrať Krízová pomoc
+kultura
+adresna-)
+dobrocinnost
+o(ultúra
+,Mládež
+Ekológia
+iiiiiii
+Su0
+iiiiiiiiii
+/d*
+iiii
+Zvieratá*
+0)o
+*!i1Hiiiiii=?Mládež
+Zmaza
+,Zobraziť*
+2ACB32A4-485F-470E-BBA9-C2EBACFE51AE
+2&U
+!"BT
+0EB04936-88CA-4E99-B023-565462E2CE39
+mhttps://larsenevans.com?
+T2&_wpnonce=09209bd7d9
+S682DAD7C-849E-4A75-A24E-E0CB9E9E8388
+)hZ
+ka(/mladez/
+,Bb
+61FD71B1-6731-41F3-9C18-9363A96F865D
+19b
+b9F66A638-24BB-4264-B68A-1DF23DA71115
+19b(1ef1a45590
+Ub60EA6C7-6F58-45D0-B7B8-E3B91D855C0E
+dukácd
+20d
+0BDDE577F-F22A
+D1-9034-988B8711645P
+dF18B2087-28F1-4ADC-B969-44C25C2297FF
+20d(42c9bad24d
+ABd
+C33A3!d597-40A7-9F95-F7E6E98279EAd
+dukacd
+18b
+8775F3E0-1AB3-4B03-ACC2-3F0AB3CEB551
+b01A813149-AAE6
+L5-A745-FBD803B9B1B0
+18b(1b112cbf21
+(1ABD3FCE-B4
+XCAB-8124-A0C9DF321CF3
+?Kultúr(
+b7BC0C40B-BE78-41BC-B4F8-23DCD89E4872
+21b
+0A316D161-CF34NL2-AF40-B23D583AA627
+b4BECBAD9-605B-4B63-9687-56B8998F7B2E
+21b(b2e4e976ab
+32A1F1Cb
+kultur
+h2DF916DC-0781-42D9-BBCB-2BCE61475E4h
+14h
+PB5D411CF-E28C-4810-8D
+4h(5381db9c97
+@6916A833-1CA8-465
+@99-2C2707CB953E
+a-e
+?Komunit
+h@CEF3D641-9D49-4AA
+17h
+2F7236A5-583E-4DCA-9EDD-D362EDF5023B
+hE57A7206-DBF4-4A93-8C33-8F6C2DC4345
+17h(f777946987
+Uh(892D3C34-FC
+8C6-8BA26FA6D047
+l 6c
+(iii&q
+FKrízov
+ir"!!
+.,!
+E7E! 8-75A9-42
+89AA-EDDF36C9514
+h3A90468B-31FB-45FA-AACC-882
+2F9Dj
+4807276B
+X1-4759-9285-02ACE28349Dj
+5j4ad669a56cd
+44C035
+(0CCF0AF1EA2
+krizov&
+0B@
+6C2FEd3C59-49AE-B128-420D3904518
+n(398E243F-FE
+PFE3-9F09-C8CD57A95F17@
+6n(b7d50a8fd5
+FD191ACE-
+0dobrocinnost/
+:AE
+KbA1S
+Gw6
+z&    o2L
+splnena
+Vybrať Naliehavá
+overena
+pripravovana
+=TOdporúčaná
+uc    /
+Pri
+@aktivna
+Ukonče
+Overená
+iiiiiii
+*!iiiiiiiiiii
+?Overená
+iBT
+CFD5132E-E8B1-4339-9D7D-EA8FD5FDEB6
+13D4F06-4DC5-4612-8197-100E04FA70F8
+L_wpnonce=0f142b65c3
+UwR
+V,DOdporúčan[
+.B[
+[E2D6AE7E-8E8E-4C7B-B617-F2ECC1002F8B
+27&[
+2756719A-96C1-470F-ACED-9E91F6F313FD
+khttps://larsenevans.com*[
+27[(8e200c6b4b
+U[036C0B47D-B036!PE-89D1-BFCAD3083706
+Ukonč
+i372584D7-9D3F-4BF2-86D5-3EAF01192C65
+6DF5BFFC-97E9-474E-BA63-074FED016DD6
+37A7FDFF-2374-46E9-81B3-FA1AEC4E9033
+C52321A6-9394-43D4-BD74-C29A6EC41807
+4(396bfa41cf
+R@0536F008-5571-4ECE4C-9CEA083288E9O
+aktiv
+DPri
+ovO
+'"O
+0BO
+AAEBA740-1767-4534-8680-3402BD30730A
+60[
+68437CC4-1988-427D-AC27-D5F99A0605B[
+[,02829E25-7A6
+L13-BD6B-25140CAD7739
+0[(905e68d2ec
+W[EA9C6DB6-2003-4EB5-9E60-AA3DDC2F5D28
+-hZ
+?Splne
+[(3908D129-4DT087-92AB-3418282000F9
+044523D51-DB45
+[CB3A9396-8725-4B86-893C-530B5B15ACE0
+62[(bdaa49cede
+97F72654-4CC5-443A-AB84-CBA439BE8F5D
+(hz[
+seV
+XTC773B1B1-B7B5-493F-B82
+26X
+29D3139-2F7F-4897-ADA3-2B62EDD38F61
+XACE2F483-750C-4C3E-B9BA-D06EECBBDEBF
+26X(638e0e56ac
+(870D3B59-7D
+X9FA-B7FF-446CCEA2DEDE
+:AE
+.lIDs
+(.@
+&    &    &    &    &    &    &    &    j&
+&    &    &    &    &    &    &    &    B&
+AEs.
+z&    k
+(&    &    &    &    &    &    &    &
+Gnr
+B(&
+((((((((
+@.m
+spravy
+poradna
+Vybrať Médiá
+rozhovory
+organizacie
+RlZbierky
+platforma
+reportaze
+heventy
+media
+4,Organizácie
+iiiiiii
+Ru0
+/b*
+Zbierky*
+*!i1Hiii
+j=@Rozhovory
+Zmaza
+,Zobraziť*
+C13F86B1-036C-4940-9B18-6B2C03AC57AD
+0&U
+7DCAD092-CD44-4ACC-A6FB-D3A39EA230CC
+jhttps://larsenevans.com.2
+T0&_wpnonce=308d9c1626
+88993617-4B08-4BA0-B186-5B7D7BC5B66A
+)hZ
+se]
+/rq
+S0COrganizácieV
+/BV
+4F9EC194-841D-4C28-B3C9-E1D2C6736D0V
+VC36899B3-A41C-4707-B587-F6117FB51435
+3V(12778d8408
+UV2771ED7D-8050-4430-96A7-338D1618E0A6
++hvV
+acie/
++BS
+SBCAFD39E-582B-4781-958A-B6328BA01795
+28S
+D705841F-A363-49B0-A07A-45DED5D7F638
+SD8B12C42-6B37-48F2-AC5F-8EB3FC7C33E6
+28S(202857ee8a
+QS6388DA8F-EADD-41F9-88BA-E7177FCA2484
+'hvS
+j.O
+SprávO
+OF3DDFD40-F457-4384-8DF3-616BF975D2Ci
+34O
+46758786
+D7-86EC-039BF07FCBB
+O38EA347E-63E4-48E5-9036-D05A8F10BEB
+4O(0cf06255ff
+POE4591F55-9648-4C34-992E-AF690294C418
+&hvO
+N(BReportáž
+RB2C3B676-9D4E-4585-920F-1B48BE54368
+29R
+F6A7A345-1170-4B4F-BD55-85D3EB21FCE3
+R02C26F8C0-F5D5
+LB-B2A5-DB5C22996ED0
+9R(21d8ae4820
+A983CCBE-EF5B-4D73-AF9B-628289772E7J
+=Event
+929A77E
+8B7ABE28-D9C6-44A6-83B5-D56251C0E34F
+PL7DBE2604-4349-4817-86,E927E031B19AP
+32P(87e786b744
+,08A86BFF-5EE
+P00-9AC1-B86704B06A70
+P,BF5C6A4F-7EA
+H6D-8525-5063029159EP
+0FAE94023-2843
+D6-9001-CFEED84AED1
+PDFC1654D1-18A5-4237
+4C-790B1D28663EP
+de84
+(5C7EEE33-7F
+T7CD-B288-CF9656545ED1
+?PoradňR
+R0653D04-987F-4E53-9A0E-66E52CF74B86
+8ADA-8C3E3B2D896R
+R5C948896-88A7-4AEB-AEC9-04D38F177862
+37R(983412ab29
+DE69-B98E570DD2C3
+*"b
+068EE214C-2054
+82D02B50-C6AF-41ED-B08D-21F30114B6D0
+O33DE3275-9C79-405A-AABA-747B6ABD468
+1O(41810c06c5
+0685A7C39-EFD8
+41-A352-8440495
+media/
+:AE
+NMds
+(.@
+&    &    &    &    &    &    &    &    &&
+&    &    &    &    &    &    &    &    j&
+z&    k
+(&    &    &    &    &    &    &    &    2&
+Gnr
+(((((((((
+C+C+C+C+C+C+C+C+
+veterinarna-pomoc
+pribehy-rodin
+Vybrať Hlasy komunity
+verejny-priestor
+Vybrať Ve
+árna p
+mPmestska-zelen
+Dá budúcnosť
+8Pnove-zaciatky
+8PLokálne projekty
+lokalne-
+LPríbehy rodín
+uspesne-kampane
+adopcie-zvierat
+hlasy-ko-B
+(Úspešné
+8Mestská zeleň
+iiiiiii
+Ru0
+jjjjjjjjjj
+/Fn*
+iiij
+Zelená budúcnosť*
+*!i1Hiiijjj=HVerejný priestor
+Zmaza
+(Zobraziť*
+-,i
+E199FF65-9BEB-4787-BA34-5E792E0D420E
+68E9677F-CA32-4642-BEB6-B694CEC74FE8
++557A95B-225E-4FEA-9ECD-31851188E885
+T3&_wpnonce=a3b5f0f3b4
+XC422E1A22-8E6C-4F35-B5F4-7E35D7145942
+.https://larsenevans.com/temy/ve
+y-q
+974D7BF5-5BE4-4102-B400-EFD977FEDB75
+5C9227BD-407F-424E-B3FD-55D1AFA712BD
+TBF6D6825-0386-408F-9748-334042B80D0E
+hhZ
+4T(275941dc31
+UT3B6A6ED4-00E9-4013-B177-855B37287226
++hZ
+a-a
+SEFD272A1-BD31-4382-9B98-B9796DFCAA82
+08F06BAAd48-4ACE-85CC-EF190F9EC499
+S9253F0C9-7A85-47E0-AF24-85B122545EF1
+2S(06f38d5a54
+6E067084-B1AC-4AEB-8B81-6F58FA6D7E7C
+lokalne-q
+W@3B867342-0172-483A8E2-3975A21470E3u
+,F5DCCBAF-2DD
+L03-91B6-F1DA45A03B67
+W31CFBE35-8EBA-4526-9B4F-FE6FC72B297D
+6W(71848d929b
+AC9A0C59-659F-4711-9856-350015B8CA10
+/hn
+arna-e
+(Úspešné
+3BX
+XAF0ED7C5-BD98-4309-8D50-9F16ED5B679C
+@C4F7138F-DE2B-49Fa89F-C93F5E520370X
+X54E26EBE-670C-4447-A9BB-2F03279B09E6
+8X(1a81e47577
+WXEACDD7C3-8609-482A-999E-DF7DFB9A38AB
+-hnX
+uspesne-m
+S29AC0E0B-FA93-4BA8-9E3F-AF4ECD1EC8Fs
+D793A20F-671C-4551-97FD-007DA48C606
+SA146DDF5-BFE7-453C-8E28-1C4A698B44CB
+7S(ad7776afa0
+A7CB4AX
+F2F
+P93-8A83-AB5CA82AEF68
+j.S
+4Nové začiatkU
+SEA904072-E2B8-4505-9885-FAB8AF7D617
+76DA207B-3E87-42C2-9319-4D5DE3E1B777
+SP681A0A5-AE0A-41A9-9BA
+EB2604E4AS
+544ED8DF-210D-4206-A8E0-692A4344C7FF
+nove-zace
+j.Q
+8Príbehy rodín
+Q1DFE2E76-9E22-456A-8FD8-530CF618FC46
+5ACEBE1F-94B0-4481-9197-67DCE9473CF1
+Q81547EB1-E4C6-4F47-B55C-118F33ABDD1C
+1Q(b8039d3fce
+XF75D7A07-7B75-4ECF-BF25
+pria
+-rodi
+Q0EHlasy komuni
+PF60C4DA7-C23E-4B83-B44F-64F7229F4CD
+(C0B4F5B3-FD
+L36F-AD75-912F74BD236
+P2CB7A1F7-079C-4CAF-8A77-222DC389818
+9P(536e0ba306
+2B2AD961AXd2-4D96-9C6E-7A5F98E0CCE2
+8hlasy-komunity/
+:AE
+KbA1S.
+z&    o*
+obcianska-iniciativa
+Vybrať Ekologická iniciatíva
+nadacia-a-zdruzenie
+neziskova-organizacia
+_,Komunitná o    &4ácia
+Obč
+dobrovolny-partner
+ek-
+a.(
+Nad
+0 a združenie
+iiiiiii
+jjjjjjj
+*!iiiiiiijjjj
+LNadácia a združenie
+obraziť*
+iBT
+https://larsenevans.com/wp-admin/term.php?taxonomy=subjekty&tag_ID=43&post_type=organizacia&wp_
+!*B
+9FBAA753-F421-49B3-B377-43F31989FA14
+lhttps://larsenevans.com92
+8?action=delete&1N
+L_wpnonce=8a285a5fc5
+5A/N
+T/nadacia-a-zdruzenie/
+6F455361-2AB7-422C-B14B-A87F3995091
+0CBC71CA-0C95-4DF7-8B9A-17124A6C6078
+425EF0D6-6878-4B36-B7B6-9BE267B733FC
+5(ba64e819fc
+at438779E9-168D-4749-80CD-376D446
+K    6
+Sociálny partner*
+iAB7C2DEF-095F-4410-B52C-FE0B3A35034
+BIR
+F07FADB0-E04F-4511-B41F-0C517CA08EBD
+2162845E-57E7-4C00-908F-BB68C0F93B0p
+8,A31027CF-B928L7-BD73-3CD1569C4472
+4hZj
+lny-
+(6EC3EF4F-9F
+8991-91F8-4CDB72
+84972206C-F3F9-4a@B524-E95F258010E4
+4(a7c3ff2300
+,55582C4F-DCF
+H3-8BCB-CE7C11580712
+TObčianská iniciatívO
+/"O
+8BO
+FE10C3F-B369-479D-85BB-225CB48CD665
+56E5375E-844C-48E8-8340-1BEF65398895
+D4FA2BAB-BD40-49CB-939D-08EFD9B65338
+6(92b010b1c4
+024D7CB97-CA84
+@7A-5F89594D7875
+obc
+Ekologic
+AFB531A2-6A9A-4C60-AD53-BE49A1809F01
+5D1BFF4E-4911-456F-A38F-0DF4508D66FA
+P5C0-B220-811A3B05A6B6
+(77CB1245-88
+P69F-B858-4EC2345FE5B6
+e    0a-iniciativa/
+"*iiiiiiiiB
+iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+"r.
+Title
+!t4
+character-    THhyperlink
+4null
+Lt-0-categoryaxis_0
+hart
+,referenceLin
+seriez
+value
+1FV
+1JV
+1.V
+1:V
+2FV
+2NV
+2JV
+2.V
+2:V
+3FV
+3NV
+3JV
+3.V
+3:V
+4FV
+4NV
+4JV
+4.V
+4:V
+5FV
+5NV
+5JV
+5.V
+5:V
+olumn
+defaul
+equa
+-0-imag
+168
+"!BZ
+!stickyComment-0&/
+svgimpo
+:&AS
+tablAo
+2    '
+3    '
+4    '
+5    '
+footerRow
+label./
+(.#
+ummary)
+(B)
+H.Y
+&".Y
+Ia)
+Ydm
+Ia6
+l-&
+Tex
+Nam
+ist
+-Non
+Bulle
+tocentry
+ing
+**C.6*
+*u*6*
+Big
+2Bu
+2*)
+&    Q
+er & F
+Dar
+7n.
+Lettere
+Numb
+Harvar
+AuBk
+Subt
+Dash
+akina
+oc-
+-i&_
+v@@
+drop-capB
+iBm
+THP
+@2'
+"/nX
+-x0
+:YC
+@A*
+u!M
+022
+ne*I
+E-2
+BRMH-V
+"mRjH    ;
+6I5n
+Fill Center
+?"R
+7, A
+Direc
+al Key
+@?f
+GdH
+B1x
+Lef
+Medium
+Top
+,    b
+@A3
+Highb
+ht?
+-fffj4
+aI.
+Lowb
+SoftM+n
+0A;
+Edgez*
+:W"
+bfX
+aYl
+Z9l
+&"Z
+aBU
+2FG
+3Fm
+5Fm
+6Fm
+7Fm
+8Fm
+9Fm
+B                .
+"jY
+lkm
+1mJG
+1mJ
+Jom
+1mJ
+(sm
+1mJ
+rtm
+1mJ
+u9m
+J    VF
+-lJ    Vl
+Qxl
+-lJ    Vl
+-l    R
+-lJ    D
+J    Vl
+vE+
+?.A+
+rYD
+i50
+?-n
+@.1
+TRh
+TR7
+jRX
+iRm
+RIR
+.......6.R
+.Rm
+:::::::::R
+W#=-X
+N";F
+mAn
+:J:
+&;o
+s9o.z&
+Uzzzzz
+5nzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+zzz
+zzzzfz
+9l_sFl
+G.G
+333323
+[=.m
+VJb
+(.m
+=mJj
+Gjjjjj
+]Jjz"z
+iP8Z
+@A*
++bl
+0Fm
+ANm
+!HBc
+=mJG
+6Fm
+8Fm
+J    V
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+Qf_
+@2'
+4@@
+line
+?-n
+@@.1
+!dT
+TR7
+jRX
+qa!
+iBm
+aIP
+RIR
+?-m
+.......6.R
+.Bm
+:::::::::R
+valueaxi.;F
+ZNd
+b=o
+MAs
+Ne0
+Default
+Fill Center
+&Peq
+, A
+jKL
+Directional Key
+@?f
+GdH
+Right
+B!1
+Lef
+Medium
+Top Lr
+@A3
+Highb
+ht?
+-fffj4
+B    4
+aI.
+Lowb
+SoftM+n
+0A;
+L@&
+Edgez*
+!5.*
+o    .S
+aBU
+G.G
+tttt2t
+[=.m
+VJb
+A    m
+.    !
+(.m
+pppp6p
+=mjRVt!
+=mJj
+=mjjjjj
+=mJj
+tBB
+V    Rc
+Yzzzzz
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+2zz
+2Fz
+Izz
+@,1InIb
+xbT
+1GIRq
+IIjIa+73
+IbT
+I.I
+'*xS
+43'
+d?-
+g?-
+""""""R
+2dr
+ddd
+:G.G
+=.m
+iP8Z
+@A*
+5*Bm
+6Fm
+@Rm
+7Fm
+8Fm
+9Fm
+B*!
+2Fl
+20Fm
+=mJG
+R    R
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+Qf"
+@2'
+*;#
+4@@
+line
+?-n
+@@.1
+TRh
+!dT
+TR7
+jRX
+iRm
+RIR
+#Rm
+=-R26
+.......6.R
+.Rm
+p=J
+:::::::::R
+valueaxi.;F
+ZNd
+&;o
+j=o
+MAs
+ol0
+HmM
+Default
+Fill Center
+!3n
+3!S
+, A
+jKL
+Directional Key
+@?f
+GdH
+Right
+B2x
+Lef
+Medium
+Top Lr
+@A3
+Highb
+ht?
+-fffj4
+B    4
+aI.
+Lowb
+SoftM+n
+0A;
+L@&
+Edgez*
+o    .S
+z ?
+aBU
+G.G
+tttt2t
+[=.m
+VJb
+A    m
+(.m
+=mjR
+=mJj
+=mjjjjj
+=mJjzzzz6z
+tBB
+V    Rc
+zzzzz
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+E+Jz
+4zz
+9Nz
+4zzzzz0
+IzzzzzzzzR
+@,1InIb
+IbT
+1GIRq
+IIIIR
+IbT
+InI
+I.I0P
+*GxxxBm
+"UUUUU0T
+zzzzzzzzR
+..".Bm
+Lq(
+?-P"
+=-:.R
+zzzzzzzzR
+"zBm
+?-gXi:h
+zzzzzzzzR
+4zzzzzNz
+&;zzzzz
+5zzzzznz
+mzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+@2'
+?*Q
+@A*
+A l
+A#B
+2FG
+3Fm
+5Fm
+6Fm
+7Fm
+8Fm
+9Fm
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+',referenceLin"*
+vE+
+#+4
+*[*
+4@@
+line
+"P-8
+)-R
+?-n
+@@.00v/
+TR7
+f,1
+jRX
+?-5.
+RIIR
++?-g/q
+?-K
+h.h.h.h.h.h.h.6h.R
+h.0
+valueaxi.E
+ZNd
+&t;o
+r=o
+sHJ
+None
+column-s
+-default
+"t0(
+drawing
+-0-
+equation-0-imag2
+1NL
+-333
+HA?
+gr7K
+Formal Shadow
+shape)
+0"z
+wT*
+Body
+.wy
+0ppp
+,zBz(
+i"z
+1zm
+Chalk2
+-2F
+Head
+se:
+AJ.
+-0F
+Label
+8Z*
+-Medium
+A    k
+Dark
+!Ip
+2Rp
+!stickyComment-B
+V4eR
+B.q
+PATTT
+Jpo
+*r?
+r!"
+tabl
+?Z=
+UCT
+qVT
+lIVT
+5&9T
+6B2
+-"C
+J(0T
+@2'
+table-4-
+LStyle*
+iP?Z=
+==============
+===============
+@categoryLevel1Row
+2Nr
+3Nr
+4Nr
+5Nr
+footerRow
+,headerColumn6X
+labelm
+".a
+ummaryi
+1;jO
+1S6i
+"2NWn
+acm
+JBJn
+-[e
+wnO
+.&j
+R'In
+Xi,
+Text-0V
+88Z
+2Ly
+-Bold:bZ(@
+9BnD
+Medium
+Za)
+lBv
+-(Name-0-shap
+ZSr
+2RHY
+3"1
+1(*
+Title
+111
+,B1
+Bullet
+1-list)_
+e]tQ?
+ing 1
+pA4
+40A
+Z4I
+:@6
+a 2
+F9fP9=
+a9a!
+9ur)
+Red1
+2@;2
+Big
+-dN
+@Am
+@A.
+Caption
+qVp
+er & F
+Imag
+note
+Fm/
+11B0
+@".
+j9B
+&5X
+/F/i,
+51B
+O+O+NO+!W1W1
+9n.
+Lettered
+e]t
+C&G
+UvU
+Numbz
+-[z
+Harvard
+6=W
+x    x
+Subt
+-:C(
+A(:
+Dash
+Note Taking
+8=R
+-YN
+)Y6
+)!cn
+"h-,
+box
++1.)
+v!!
+VZ1
+toc-
+-defaul
+*****
+drop-capNY
+0.0
+?q         ?1
+*Za
+Zc'jj]
+r R
+*jIe
+EmphasisA
+Strikethroug
+Underlin
+Italic
+O.f
+Red
+]fR
+J2l
+Whit
+"#6
+j.g
+Times-Roman
+6VJ
+.VL
+;VD
+Courier5
+/VM
+P6K
+eUU
+0A!
+b65
+ZJ    :3
+Z2rR
+t@J
+PARB
+Tables/DataList
+Ta2
+Tile
+918627
+7936?
+66842
+4346
+3191F
+72?
+9186.
+3192.l
+7FA
+79992
+jnZ
+67552
+25J
+79:
+4Jm
+20J
+76j
+7936
+ViewStat6
+67:Z
+e6g
+100F'
+66NS
+15=
+9256
+15R
+482
+896;
+6B?
+AnnotationAutho
+20:
+906Y
+9L8
+896
+93B
+y3y)
+awL
+:Xn
+&aY
+at)
+Hi:
+á+Z
+9Xk
+eIL
+Uti
+EXZ
+6686
+9196?
+Vk3
+424
+099F
+7:7
+44:&
+9J!
+161M"BM"
+.*:
+&v 2X
+& & &
+.Ex
+4346
+":i&@
+áFZ
+;H"
+EvL
+0aZ
+!z(
+ý_Z
+9HI
+8DP
+_AX
+9!Dh
+R HC
+E    X
+I    D
+E_H
+;Dp
+)@Dl
+:X,
+YDD
+;Db
+m X
+0UZ
+ekL
+uXw
+tDu
+q!EYX
+9D"
+0=Z
+9Hu
+:Dz
+-173314Rk
+6696@
+7946
+8A:;
+6wA
+4349"
+90B
+?LP
+"1S
+&;T
+!(He
+lMH
+@iH
+TSCEReduceCalcE-
+MsgSize
+66:Tx
+9266T
+96?
+79:E
+46eG
+572g
+7896
+7996
+44:wE
+43N
+*#ginger/00b_theme/tile6+
+bullN
+E@6
+5q5Hia
+0black.png"
+DB+
+fB+

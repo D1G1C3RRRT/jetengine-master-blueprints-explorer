@@ -1,0 +1,827 @@
+=== 20webblueprints AI ===
+
+BASE SCHEMA (VŠETKY BLUEPRINTY)
+"cpt": [],
+"cct": [],
+"taxonomies": [],
+"rela
+listing
+querie
+form
+set
+1. MARKETPLACE6
+l "name": "Marketplace", "typ
+products
+field
+"pri
+"num
+stock"B!
+]    v2k
+totalFH
+atus
+text"
+citynW
+"categor
+s":[9S
+relaU3
+"to"
+8.&
+"hoA
+["fe
+ed",
+,"latest
+Mc8 2. REAL ESTATbc
+real_e
+)Vc
+pert    Qcb
+area9QFa
+"agenANe
+hone
+] :[
+":Jt
+A5i1O
+yEp
+Job Boards
+"jobsvG
+"Ni
+sala.J
+logo!
+"a&.F
+Evi?F
+d2-
+speak
+biN
+,Startup Plat
+projeJ
+govS
+rais)Mj
+investoJi
+campaig7
+fund-
+Ecommer
++    y?
+sho
+Y    JE
+Travel.
+touZ
+dur
+ac!
+e#&A
+hotel]L 8. NEWS / MAGAZINb
+News Por
+newz
+articleV+
+breakA*y
+LMS.
+edu
+cAZW
+lee@)_j
+lessonV
+,UVj
+progres
+quizvW
+zZW
+resulZ
+scor
+KVi
+5L 11. BOOKING SYSTEbq
+Booa;J
+servicZ
+lEf
+cBS
+Direct
+fol
+por
+clien
+O case_stud
+DIndustrial Catalog.C
+equipm    F
+speca"-
+]5+H 15. B2B WHOLESALb
+b2bv
+bulk_*
+min_
+*!QFI
+",:_
+016. KNOWLEDGE
+4Knowledge Base.?
+difficulvb
+17.
+UNITb
+Commun
+osZf
+likrm    j
+roluLb1
+U0 18. TICKETp
+Ticke
+ortv
+ope
+clo
+9. Cf
+CRM.
+crmv
+leadV
+dealVC
+valu=]
+pipeli
+OWDz5
+Crowd"
+QV=
+9J( FINÁLNY
+VIEW
+20 blueprints
+1 schema sy
+iler
+H20 instant web temp
+Ak chceš ďalší
+H spravím ti
+auto
+rpbuild script (pseudo CLI / AI
+alebo
+WtUI wireframe generator z tých
+e4SONov
++,8
+e iB/
+iiii
+iiiii
+iVW
+!sZ
+iiiiiii
+KH@
+2026-06-02T10:28:11+0200
+8'B
+xP5X
+8(f
+09@
+BaZ
+mU0
+iiiiii
+ODH
+20i
+bbF
+-RG
+iiii
+*,"
+9'F(
+eAR
+Europe/Bratislavaj
+1iq4
+"*iiiiiiiiB
+iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+"r.
+Title
+! 4
+character-    THhyperlink
+4null
+Lt-0-categoryaxis_0
+hart
+,referenceLin
+seriez
+value
+1FV
+1JV
+1.V
+1:V
+2FV
+2NV
+2JV
+2.V
+2:V
+3FV
+3NV
+3JV
+3.V
+3:V
+4FV
+4NV
+4JV
+4.V
+4:V
+5FV
+5NV
+5JV
+5.V
+5:V
+olumn
+defaul
+equa
+-0-imag
+168
+"!BZ
+-A/
+!stickyComment-0&/
+svgimpo
+tablAo
+2    '
+3    '
+4    '
+5    '
+footerRow
+label./
+(.#
+ummary)
+(B)
+H.Y
+&".Y
+Ia)
+Ydm
+Ia6
+l-&
+Tex
+Nam
+ist
+-Non
+Bulle
+tocentry
+ing
+**C.6*
+*u*6*
+Big
+2Bu
+2*)
+&    Q
+er & F
+Dar
+7n.
+Lettere
+Numb
+Harvar
+AuBk
+Subt
+Dash
+akina
+oc-
+-i&_
+drop-capB
+iBm
+SHP
+@2'
+"/nX
+-x0
+lT *
+@A*
+u!M
+ne*I
+*BRG-V
+"mR
+H    ;
+H    2
+6oI5n
+Fill Center
+?"R
+7, A
+Direc
+al Key
+@?f
+GdH
+B1x
+Lef
+Medium
+Top
+,    b
+@A3
+Highb
+ht?
+-fffj4
+aI.
+Lowb
+SoftM+n
+0A;
+Edgez*
+:pW"
+FZ9l
+aBU
+2FG
+3Fm
+5Fm
+6Fm
+7Fm
+8Fm
+9Fm
+B                .
++g&
+1mJG
+Rlm
+1mJ
+0pm
+zqm
+1mJ
+Yu9m
+J    VF
+-lJ    Vl
+7yl
+-l    R
+-lJ    D
+J    Vl
+vE+
+?.A+
+rYD
+i50
+?-n
+@.1
+TRh
+TR7
+jRX
+iRm
+RIR
+.......6.R
+.Rm
+:::::::::R
+W#=-X
+N";F
+mAn
+:J:
+&;o
+9o.z&T
+yUzzzzz
+oVz
+;5nzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+pRz
+zzz
+zzzzfz
+j9l_sFl
+G.G
+333323
+[=.m
+VJb
+(.m
+=mJj
+Gjjjjj
+]Jjzzzz
+iP8Z
+@A*
+0Fm
+ANm
+lBv
+=mJG
+6Fm
+8Fm
+J    V
+9lJ    Vl
+9l    R
+9l    D
+9lJ    D
+9lJ    Vl
+@2'
+4@@
+line
+?-n
+@@.1
+TR7
+jRX
+qa[!
+iBm
+aIP
+RIR
+?-m
+.......6.R
+.Bm
+:::::::::R
+valueaxi.;F
+ZNd
+E=o
+MAs
+Default
+Fill Center
+&cq
+, A
+jKL
+Directional Key
+@?f
+GdH
+Right
+B!1
+Lef
+Medium
+Top Lr
+@A3
+Highb
+ht?
+-fffj4
+B    4
+aI.
+Lowb
+SoftM+n
+0A;
+L@&
+Edgez*
+!5.*
+aBU
+GbGb
+G.G
+tttt2t
+[=.m
+VJb
+A    m
+.    !
+(.m
+pppp6p
+=mjRVt!
+=mJj
+=mjjjjj
+=mJj
+tBB
+V    Rc
+Yzzzzz
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    D
+9lJ    D
+9lJ    Vl
+2zz
+2Fz
+Izz
+@,1InIb
+xbT
+1GIRq
+IIjIa+73
+IbT
+I.I
+'*xS
+43'
+d?-
+g?-
+""""""R
+2dr
+ddd
+:G.G
+=.m
+iP8Z
+@A*
+5*Bm
+6Fm
+@Rm
+7Fm
+8Fm
+9Fm
+B*!
++b!
+2Fl
+20Fm
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+Qf!@
+@2'
+4@@
+line
+;?-
+?-n
+@@.1
+TR7
+jRX
+iRm
+RIR
+#Rm
+=-R26
+.......6.R
+.Rm
+p=J
+:::::::::R
+valueaxi.;F
+ZNd
+&;o
+j=o
+MAs
+Default
+Fill Center
+!3n
++2!S
+, A
+Directional Key
+@?f
+GdH
+Right
+B2x
+Lef
+Medium
+Top Lr
+@A3
+Highb
+ht?
+-fffj4
+B    4
+aI.
+Lowb
+SoftM+n
+0A;
+L@&
+Edgez*
+aBU
+G.G
+tttt2t
+[=.m
+VJb
+A    m
+(.m
+=mjR
+=mJj
+=mjjjjj
+=mJjzzzz6z
+tBB
+V    Rc
+zzzzz
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+E+Jz
+4zz
+9Nz
+4zzzzz0
+IzzzzzzzzR
+@,1InIb
+IbT
+1GIRq
+IIIIR
+IbT
+InI
+I.I0P
+*GxxxBm
+"UUUUU0T
+zzzzzzzzR
+..".Bm
+Lq(
+?-P"
+=-:.R
+zzzzzzzzR
+"zBm
+?-gXi:h
+zzzzzzzzR
+4zzzzzNz
+&;zzzzz
+5zzzzznz
+mzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+5YJz
+@2'
+iP8Z
+@A*
+A#el
+lBv
+2FG
+3Fm
+5Fm
+6Fm
+7Fm
+8Fm
+9Fm
+B                .
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+',referenceLin"*
+2E+
+E+8
+#+4
+*[*
+4@@
+line
+"P-8
+?-n
+@@v/
+TR7
+jRX
+?-5.
+RIIR
++?-g/q
+?-K
+h.h.h.h.h.h.h.6h.R
+h.0
+valueaxi.E
+ZNd
+&t;o
+r=o
+sHJ
+None
+column-s
+-default
+"t0(
+drawing
+-0-
+equation-0-imag2
+1NL
+-333
+HA?
+gr7K
+Formal Shadow
+shape)
+0"z
+wT*
+Body
+0ppp
+,zBz(
+i"z
+1zm
+Chalk2
+-2F
+Head
+se:
+AJ.
+-0F
+Label
+8Z*
+-Medium
+A    k
+Dark
+!Ip
+2Rp
+!stickyComment-B
+V4eR
+B.q
+PATTT
+Jpo
+*r?
+r!"
+tabl
+?Z=
+UCT
+qVT
+lIVT
+f*T
+;&;L
+-"C
+J(0T
+@2'
+y    r
+table-4-
+LStyle*
+iP?Z=
+==============
+===============
+@categoryLevel1Row
+2Nr
+3Nr
+4Nr
+5Nr
+footerRow
+,headerColumn6X
+labelm
+".a
+ummaryi
+1;jO
+1S6i
+"2NWn
+acm
+JBJn
+-[e
+UwnO
+.&j
+R'In
+Xi,
+Text-0V
+88Z
+2Ly
+-Bold:b(@
+9BnD
+Medium
+Za)
+lBv
+-(Name-0-shap
+ZSr
+2RHY
+3"1
+1(*
+Title
+111
+,B1
+Bullet
+1-list)_
+e]tQ?
+ing 1
+pA4
+40A
+Z4I
+:@6
+a 2
+F9fP9=
+a9a!
+9ur)
+Red1
+2@;2
+Big
+-dN
+@Am
+@A.
+Caption
+qVp
+er & F
+Imag
+note
+Fm/
+11B0
+@".
+j9B
+&5X
+/F/i,
+51B
+O+O+NO+!W1W1
+9n.
+Lettered
+e]t
+C&G
+UvU
+Numbz
+-[z
+Harvard
+6=W
+x    x
+Subt
+-:C(
+A(:
+Dash
+Note Taking
+8=R
+-YN
+)Y6
+)!cn
+"h-,
+box
++1.)
+v#!
+VZ1
+toc-
+-defaul
+*****
+drop-capNY
+0.0
+?q         ?1
+*Za
+Zc'jj]
+r"R
+*jIe
+EmphasisA
+Strikethroug
+Underlin
+Italic
+O.f
+Red
+]fR
+J2l
+Whit
+Times-Roman
+;VD
+ABK
+/VQ
+PA*
+Courier:
+6VJ
+)@i
+-1732080".r
+áFZ
+;H"
+iaF
+EvL
+fXy
+!z(
+ý_Z
+9HI
+8DP
+_AX
+E    X
+I    D
+;Hp
+)@Dl
+VXZ
+:X,
+YDD
+Xti
+;Db
+0UZ
+ekL
+uXw
+tDu
+EYX
+9D"
+0=Z
+9Hu
+:Dz
+1&e8
+Hi:
+á+Z
+Upi
+E_L
+e+D
+*#ginger/00b_theme/tile6+
+bullN
+E@6
+5q5Hia
+0black.png"
+*S(*
+DB+
+fB+

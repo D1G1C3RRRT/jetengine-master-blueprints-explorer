@@ -1,0 +1,1578 @@
+=== blueprints ===
+
+Tu máš JetEngine MASTER TEMPLATE SYSTEM
+navrhnutý ako reusable
+site generator architecture
+Cieľ: aby si mal 1 systém
+20 produktových demo webov.
+1. CORE IDEA (MASTER SYSTEM)
+Každý web = kombinácia 5 vrstiev:
+1. CORE ENTITIES (CPT)
+2. DATA LAYERS (CCT)
+3. TAXONOMIES (FILTERS)
+4. RELATIONS (LOGIC)
+5. ACTION LAYERS (TRANSACTIONS)
+2. UNIVERSAL ENTITY STACK (POUŽÍVA SA VŠADE)
+CPT (HLAVNÉ BLOKY)
+ITEMS
+ACTORS
+TRANSACTIONS
+ITEMS =
+čo existuje
+Products
+Services
+Properties
+Jobs
+Events
+Articles
+Projects
+Courses
+Quizzes
+Listings
+ACTORS =
+kto existuje
+Companies
+Users
+Authors
+Agents
+Speakers
+Vendors
+Organizations
+TRANSACTIONS =
+čo sa deje
+Orders
+Bookings
+Applications
+Investments
+Registrations
+Submissions
+Payments
+Leads
+3. CCT DATA LAYER (REUSABLE MODULES)
+nikdy nemajú SEO URL
+UNIVERSAL CCT MODULES
+1. Categories Engine
+name
+slug
+icon
+parent_id
+2. Locations Engine
+country
+region
+city
+address
+lat
+lng
+3. Status Engine
+draft
+active
+paused
+closed
+archived
+4. Types Engine
+item_type
+actor_type
+transaction_type
+5. Settings Engine
+site_name
+currency
+tax_rate
+timezone
+features_flags
+6. Media Engine
+file
+type
+caption
+linked_item
+4. TAXONOMY LAYER (FILTER SYSTEM)
+iba UI + filtering
+category
+tag
+type
+industry
+location
+status
+5. RELATION ENGINE (KOSTRA LOGIKY)
+JetEngine relations =
+brain system
+CORE RELATIONS PATTERN
+ITEM
+CATEGORY
+ITEM
+LOCATION
+ITEM
+ACTOR
+ITEM
+TRANSACTION
+ACTOR
+TRANSACTION
+6. ACTION LAYER (TRANSACTIONS)
+všetko čo user robí
+STANDARD FLOW
+view
+lead
+apply
+book
+buy
+invest
+submit
+7. TEMPLATE SYSTEM (JETENGINE UI)
+SINGLE TEMPLATE PATTERN
+Hero
+Gallery
+Meta Grid
+Relations Block
+CTA Block
+Related Items
+ARCHIVE TEMPLATE PATTERN
+Filters (JetSmartFilters)
+Grid (Listing)
+Sort
+Pagination
+Map (optional)
+LISTING ITEM PATTERN
+Image
+Title
+Meta (price/date/loc
+Badge (I/type)
+CTA
+8. 20 WEBSITE TYPES (MAPPED TO
+TX = Orders
+u, 2. Real E
+pert
+ACA
+= Agent
+Inquir
+3. Job Board
+Compan
+A&:1
+4. Ev
+Speak
+Instruct5
+Enrollm
+6. News / Magazin5
+Article9Z
+Auth
+J Submissio    T 7. Startup Platform
+Foun!
+/ Inves
+Travel
+/ Hotel
+genc5z
+Softwar
+Plan
+User
+Subscrip
+z=E
+Attempt
+11.
+Syste5?"
+Provi!@    I.
+12. Dire!
+y1:
+BusinesAEEo
+Lead
+Crea9
+Contaal
+14. Industrial Catalog
+Equip!
+Sua0]
+ques)#
+152
+0 B2B wholesal5
+Bulk
+Manufa
+0 16. Knowle
+Bas
+Feedback
+17.A=
+munityB
+ReacE]
+ort)
+Resolu
+R!Q
+9. CRM:L
+Sales2
+aPTHE REAL POWER (UNIVE
+lRULE)
+Ak vieš definovať:
+- TRANSACTION
+eX1-LINE ARCHITECTURE SUMMARY
+CPT = BUSINESS ENTITIES
+CCT = DATA ENGINE
+TAXONOMY = FILTER S
+= LOGIC L
+S = USER
+IONS
+chc
+,next level:
+UI KIT
+esné li
+ar&R
+ps)
+Krátka odpoveď:
+blueprint na 1 klik
+v skutočnosti neexistuje ako natívna funkcia.
+Ale dá sa to sprav!
+tak,
+govalo
+1-click setup
+cez5
++ exa
+/im
+H systém.
+Nižšie
+p!I
+T,to reálne rA,iš v praxi.A?A
+. ČO JE    4KLIK BLUEPRINT
+ITE
+V=4Lto znamená:
+kt (1
+site)E    8 JSON / DB dump
+do novéh
+hotová1
+ktúra
+#    p3 SPÔSOBY AKO TO ROBIA PROFI
+A) 9
+E)T
+I)T0(CORE METÓDA
+4najdôležitej!i
+uješ:ea
+Types)aZ
+Taxonom
+Rel
+QuA
+BuilderE
+Forms
+fielTVýsledok:
+jet-engine-)@
+.json
+Tools 8
+všetkoALvytvorí automatickyi
+toto je
+blQ]
+kE!q
+!y8 B) WordPress
+ging Teme8 (NAJSILNEJŠIE-OQ
+workflow:
+sAH
+(napr.
+na.
+ulož
+&e'
+st    A
+klon-
+Dup
+/ ho
+clone)B)(
+C) T
+EleR
+or +Y-/.(agency demo=
+configmM
+Duq
+kit
+ten
+a časť
+Ty s0
+weby
+CONFIG PACKS (
+mHNAVRHNÚŤ SPRÁVNE
+ma"
+real_e
+job_b
+event_A
+news_
+Obsah
+@u:
+"cpt": [],
+STEP 1
+pluginF
+(5a
+:][Bz
+vyber
+e:.
+J-=
+oe.
+iaa2
+napoj
+pridáš
+LEVEL
+TKTÚRA (to čo vlastne
+ty)
+CLON
+IMPORT
+READY
+WEB
+8.4A LIMITÁCIE (u
+é)=4NEUMOŽŇUJE:
+e full
+8em from scratch!LV
+-generov
+bez
+u)thale umožňuje:
+komplet
+!!    -
+ak-!
+ized-
+WEB.(
+Core
+y CPT/CCT
+dataQ
+potomU4aE&
+HANGEY&
+DAD
+ZHRNUTIE
++5X&
+m ti&
+(ďalší kr
+tvoje
+alebo
+layout)
+4má byť v tom5F
+Master
+).(
+pokrylq
+ym ,átom.
+Cieľ
+=.;
+vý + _
+čaP
+*    *
+IDEA
+KJl
+deklaraz
+iť"
+Nie
+TOPG
+STRU
+set
+A (ID
+": "*)
+ver
+1.0
+de"
+UE?
+sal
+em    1
+Europe/B
+slava"
+(HL
+Štru
+s    q
+label
+sup
+,FIELD FORMAT.
+style:
+: "num
+defaul
+null
+PRÍKLADV
+ea2+
+ypE=
+textR'
+tock.)
+"catego
+5. 1
+country
+cit(
+lat.O
+!2G
+lngR)
+TYPOVÉ
+MODULES:
+use-
+media"
+[y)
+hier
+caa
+trui
+icon.
+M_1
+(JETI
+_to_6
+many
+) STANDARD "6
+ATEGORY
+LOCA
+3*e
+(S (UI RENDEV
+_card
+for
+gri
+)te(g
+"c    -
+View
+single
+d_6
+: :
+valuA
+limi!Q
+12aE
+S (=RU
+hidden.
+"insert_!_
+"send_    jA
+S (GLOBAL
+curr
+EUR
+_rat!l
+review
+_(  "multi_ve
+UI)
+MAP
+home_se
+"hero
+d_itemI
+es5AaH!:
+galle
+vNS
+HEXAMPLE (MARKETPLAC
+:1Er
+total.
+atus.0
+yAo!
+y    ej
+ArO814. HOW THIS CO
+ALL
+WEB
++ I
+job
+qui
+sults
+service
+appoin
+?""
++ l
+"""
++ d
+Edu)8
++ inter
+FIN
+RINCIPLE*
+Decla
+Defini
+NOT
+rows*
+step
+môž:-
+iler
+z tohto
+ť"S
+y (
+-by-
+mapping
+Sup
+, kde
+u stáva
+COMPIL
+-BY
+v admin
+áciif
+. INPUT
+OUT
+MODEL
+Steps6
+1. Pars*
+2. Split Enti
+/ Tax / "m
+ap9
+Modu
+4. G
+depend
+3. DEP
+NCY OR
+usí
+oradí:
+(e(
+layer)
+8. S
+/UI
+Qa)
+AT"
+Path in
+fill
+)])
+input:
+Add
+Name:
+Slug.
+(Text)
+SavF
+Publish-J
+=ar
+&#I!k
+Y9q
+ieR
+Attach to
+d.J
+From:
+To:
+[L*/
+-IM
+- "F
+: GridIM
+s    ?V
+mit:
+aQ&
+id (H
+Send
+Sort:
+Output
+check
+4    .d
+CCT: L
+CPT:
+,.    Hmuyma
+m    E
+:2V
+,INTELLIGENCE
+IES
+nikdy
+d!S,, ktoré pou
+i!Z
+s vždy
+*6)
+tQ 5. BONUS:
+AUTO
+Tent
+Jet
+webu
+#0premýšľani
+NTÁLNY
+= WHAT
+ERE
+NEXT
+Jas
+h..
+už"-
+ý!J
+nad9
+!D90
+ion
+ateľ
+!F-&)u6
+ITA.
+tep
+Clic
+guid3
+RE &u
+prekla
+na:
+g :Z
+ADMIN
+3. &
+MAP
+CCTG
+PJ(
+p.e    *NS
+WP O
+!-[.
+Ext
+graph
+exec
+to=eI
+first)
+6.6
+(KLÍČ
+)u'
+= task
+NAME]
+What!@e&
+onnect
+Yes/No-K
+CT*!
+#!:"
+P9VRL
+9V9
+@7&
+2:*P
+3:*T
+3::
+*#-
+2:6&
+@    )
+4:j
+7#.
+3!'R
+ORB
+eld
+,"G
+8    (
+4uE
+ies (Be
+3 ANT PART)
+Noth
+can refe
+does not
+yet
+both"
+ence
+VIEW*V
+JSON
+04*
+Map
+YOU
+78E POSTAVIL
+Luž:
+no-code back
+reus
+,:&
+logic (
+0by vyzeral AI
+á za
+pack (20
+medzi
+ím    Q
+m a*S
+Prompt
+EYT:
+TEN
+návod
+(A-
+človeka
+n8n /
+2.6
+[1]
+[2]=
+ured
+eC nner (rozE
+na@
+y)67
+4]=y
+5]Fl
+9k6M
+6] FinalA
+up G*
+PROMPTA7
+)Ul
+mozg
+1-    N
+You are2u
+Your
+Conver
+inY
+0Always follow
+- Never
+9,lain theory.
+include
+Group o
+C)":5
+at!
+per
+-I!i.
+navig
+5.A
+/&n
+1. Go
+Fill
+...
+*8 fQ
+s._
+Set1XKFO
+!d-!k
+SMAR
+AIa
+OSI
+2AA
+spli
+ING
+(!p
+ADVANCED!
+MPT (
+ION&
+H&M=
+extrémn
+snos
+!IN
+on"#
+deter
+intej
+, save
+*up
+No ab
+N(ure exactly
+be optim
+'":;
+STEPS
+SAVE-
+-G8PREPOJIŤ NA RE
+VARIANTA A
+0hšia)
+ChatGPA
+API
+v"]E!
+v WP
+B (
+AUTOM
++5()
+Webhook (
+/ No
+0C (ULTIMATE)
+WP REST5
+J"9
+FIN)
+AI2x
+HO6
+A-V1
+robí -
+nomous
+visual
+!((drag-drop
+Stačí
+smer a
+unieme
+bod,&X,
+koncepFV,
+er-L
+návrh
+u&o@
+bol:"A
+v]L  WORDPR
+PLUGIN:
+CIEĽNZ
+Upload
+yeaP
+sa v
+oK8/
+.php
+page-
+-ui
+coreJU
+/2p
+jet
+/ZB
+apV
+wp-cptR
+wp-t
+/asset
+.jV
+MqU
+3. Vali
+ure
+&C.
+5*u.Y"
+6. E
+*CE
+call
+ShowA
+Done
+eenaEI
+stránka
+UI:
+[ Choos
+et (*7
+GENERATE-g
+GINE
+fun
+&;J
+return
+_de
+'cct'
+ies.
+E6.
+_by_Yu
+if (!
+s('jet_F
+'))
+']=h
++B;
+]56
+ach !
+ct(
+]    K
+taxJK
+A    I
+cpR
+Y    J
+relJ
+u*    N
+add_
+('WI
+e_get_
+']['tmp
+'Ap!
+d =Z
+wp_red
+url
+exit;
+GETS"
+CALLY
+:    (
+8&&
+Tags
+Cards
+UPGRADE
+(VO
+rBh7
+AI v
+ion
+-fix
+improv.
+6GDBASE NEPOTREBUJEŠ
+NEU
+á"9
+iba
+uje*
+WP.
+SECURITY
+- whitea
+only aE
+1. UX
+4Biv
+d*    !k
+Prog
+SCREEN
+CT2
+Customize
+,TO VLASTNE J
+PU&
+.=(
+Site&C
+A (VXR
+nie
+budú
+WP-
+lback
+(&h
+pokrač
+v1q
+H skeleton (ZIP-read
+ide
+8 UI mockupM
+dash
+atibil
+a id
+8    N
+)    ?
+)uK
+F(-
+.U'
+)    J
+25(
+ZAK
+cA?
+xu'
+0Ah
+N    B
+N)D
+T    x
+N    6
+*    B
+H    0
+Z    r
+N    f
+B    *
+f    B
+H    6
+N    6
+jA]
+)0iB
+-0i
+"mo
+"ao
+.e=
+iiii
+iiiii
+i*Q
+!sZ
+*Tiiiiiiiiiijjjjjjjjjjjjjjjjjj
+2026-06-02T10:22:01+0200
+8#B
+xP5X
+8"f
+8 f
+8'2
+8&f
+8)f
+_!2
+52f
+fDe
+u:2i
+52i
+XZ"
+jjj
+ODH
+bbF
+-RG
+jiii
+*,"
+Europe/Bratislavaj
+"*iiiiiiiiB
+iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+"r.
+Title
+character-    THhyperlink
+4null
+Lt-0-categoryaxis_0
+hart
+,referenceLin
+seriez
+value
+1FV
+1JV
+1.V
+1:V
+2FV
+2NV
+2JV
+2.V
+2:V
+3FV
+3NV
+3JV
+3.V
+3:V
+4FV
+4NV
+4JV
+4.V
+4:V
+5FV
+5NV
+5JV
+5.V
+5:V
+olumn
+defaul
+equa
+-0-imag
+168
+"!BZ
+-A/
+!stickyComment-0&/
+svgimpo
+&AS
+tablAo
+2    '
+3    '
+4    '
+5    '
+footerRow
+label./
+(.#
+ummary)
+(B)
+H.Y
+&".Y
+Ia)
+Ydm
+Ia6
+l-&
+Tex
+Nam
+ist
+-Non
+Bulle
+tocentry
+ing
+**C.6*
+*u*6*
+Big
+2Bu
+2*)
+&    Q
+er & F
+Dar
+7n.
+Lettere
+Numb
+Harvar
+AuBk
+Subt
+Dash
+akina
+oc-
+-i&_
+drop-capB
+iBm
+&oB*WA:
+THP
+@2'
+"/nX
+-x0
+T *
+@A*
+u!M
+ne*I
+E-2
+HBR
+H-V
+Z6H    2
+6I5n
+Fill Center
+?"R
+7, A
+Direc
+al Key
+@?f
+GdH
+B1x
+Lef
+Medium
+Top
+,    b
+@A3
+Highb
+ht?
+-fffj4
+aI.
+Lowb
+SoftM+n
+0A;
+Edgez*
+:W"
+b X
+dZ9l
+aBU
+2FG
+3Fm
+5Fm
+6Fm
+7Fm
+8Fm
+9Fm
+B                .
+Ig&
+&km
+1mJG
+plm
+1mJ
+Npm
+1mJ
+,tm
+1mJ
+wu9m
+J    VF
+-lJ    Vl
+Uyl
+-l    R
+-lJ    D
+J    Vl
+vE+
+?.A+
+rYD
+i50
+?-n
+@.1
+TRh
+TR7
+jRX
+iRm
+RIR
+.......6.R
+.Rm
+:::::::::R
+W#=-X
+N";F
+mAn
+:J:
+&;o
+-9o.z&r
+Uzzzzz
+Y5nzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+zzz
+zzzzfz
+9l_sFl
+G.G
+333323
+[=.m
+VJb
+(.m
+=mJj
+Gjjjjj
+]Jjzzz
+iP8Z
+@A*
++bl
+ANm
+5A'm
+lBv
+=mJG
+6Fm
+8Fm
+J    V
+9lJ    Vl
+9l    R
+9l    D
+9lJ    D
+9lJ    Vl
+@2'
+4@@
+line
+?-n
+@@.1
+TR7
+jRX
+qa[!
+iBm
+aIP
+RIR
+?-m
+.......6.R
+.Bm
+:::::::::R
+valueaxi.;F
+ZNd
+b=o
+MAs
+Default
+Fill Center
+&Peq
+, A
+jKL
+Directional Key
+@?f
+GdH
+Right
+B!1
+Lef
+Medium
+Top Lr
+@A3
+Highb
+ht?
+-fffj4
+B    4
+aI.
+Lowb
+SoftM+n
+0A;
+L@&
+Edgez*
+!5.*
+.qc
+aBU
+GbGb
+G.G
+tttt2t
+[=.m
+VJb
+A    m
+.    !
+(.m
+pppp6p
+=mjRVt!
+=mJj
+=mjjjjj
+=mJj
+V    Rc
+Yzzzzz
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    D
+9lJ    D
+9lJ    Vl
+2zz
+2Fz
+Izz
+@,1InIb
+xbT
+1GIRq
+IIjIa+73
+IbT
+I.I
+'*xS
+43'
+d?-
+g?-
+""""""R
+2dr
+ddd
+:G.G
+=.m
+iP8Z
+@A*
+5*Bm
+6Fm
+@Rm
+7Fm
+8Fm
+9Fm
+B*!
+2Fl
+20Fm
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+Qf!
+@2'
+4@@
+line
+;?.
+?-n
+@@.1
+TRh
+!dT
+TR7
+jRX
+iRm
+RIR
+m(.
+#Rm
+=-R26
+.......6.R
+.Rm
+p=J
+:::::::::R
+valueaxi.;F
+ZNd
+&;o
+j=o
+MAs
+ol0
+HmM
+Default
+Fill Center
+!3n
+3!S
+, A
+jKL
+Directional Key
+@?f
+GdH
+Right
+B2x
+Lef
+Medium
+Top Lr
+@A3
+Highb
+ht?
+-fffj4
+B    4
+aI.
+Lowb
+SoftM+n
+0A;
+L@&
+Edgez*
+o    .S
+z ?
+aBU
+G.G
+tttt2t
+[=.m
+VJb
+A    m
+(.m
+=mjR
+=mJj
+=mjjjjj
+=mJjzzzz6z
+tBB
+V    Rc
+zzzzz
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+E+Jz
+4zz
+9Nz
+4zzzzz0
+IzzzzzzzzR
+@,1InIb
+IbT
+1GIRq
+IIIIR
+IbT
+InI
+I.I0P
+*GxxxBm
+"UUUUU0T
+zzzzzzzzR
+..".Bm
+Lq(
+?-P"
+=-:.R
+zzzzzzzzR
+"zBm
+?-gXi:h
+zzzzzzzzR
+4zzzzzNz
+&;zzzzz
+5zzzzznz
+mzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz4i
+?*Q
+@2'
+@A*
+1*E l
+A#el
+lBv
+2FG
+3Fm
+5Fm
+6Fm
+7Fm
+8Fm
+9Fm
+=mJ
+=mJG
+=mJ
+J    VF
+9lJ    Vl
+9l    R
+9lJ    D
+9lJ    Vl
+',referenceLin"*
+vE+
+2E+
+E+8
+#+4
+*[*
+4@@
+line
+"P-8
+)-R
+?-n
+@@v/
+TR7
+jRX
+?-5.
+RIIR
++?-g/q
+?-K
+h.h.h.h.h.h.h.6h.R
+h.0
+valueaxi.E
+ZNd
+&t;o
+r=o
+sHJ
+None
+column-s
+-default
+H0(
+drawing
+-0-
+equation-0-imag2
+1NL
+-333
+HA?
+gr7K
+Formal Shadow
+shape)
+0"z
+wT*
+Body
+.wy
+0ppp
+,zBz(
+i"z
+1zm
+Chalk2
+-2F
+Head
+se:
+AJ.
+-0F
+Label
+8Z*
+-Medium
+A    k
+Dark
+!Ip
+2Rp
+!stickyComment-B
+V4eR
+B.q
+PATTT
+Jpo
+*r?
+r!"
+tabl
+?Z=
+UCT
+qVT
+lIVT
+f*T
+;&;L
+-"C
+J(0T
+@2'
+table-4-
+LStyle*
+iP?Z=
+==============
+===============
+@categoryLevel1Row
+2Nr
+3Nr
+4Nr
+5Nr
+footerRow
+,headerColumn6X
+labelm
+".a
+ummaryi
+1;jO
+1S6i
+"2NWn
+acm
+JBJn
+-[e
+wnO
+.&j
+R'In
+Xi,
+Text-0V
+88Z
+2Ly
+-Bold:b
+9BnD
+Medium
+Za)
+lBv
+-(Name-0-shap
+ZSr
+2RHY
+3"1
+1(*
+Title
+111
+,B1
+Bullet
+1-list)_
+e]tQ?
+ing 1
+pA4
+40A
+Z4I
+:@6
+a 2
+F9fP9=
+a9a!
+9ur)
+Red1
+2@;2
+Big
+-dN
+@Am
+@A.
+Caption
+qVp
+er & F
+Imag
+note
+Fm/
+11B0
+@".
+j9B
+&5X
+/F/i,
+51B
+O+O+NO+!W1W1
+9n.
+Lettered
+e]t
+C&G
+UvU
+Numbz
+-[z
+Harvard
+6=W
+x    x
+Subt
+-:C(
+A(:
+Dash
+Note Taking
+8=R
+-YN
+)Y6
+)!cn
+"h-,
+box
++1.)
+v#!
+VZ1
+toc-
+-defaul
+*****
+drop-capNY
+0.0
+?q         ?1
+*Za
+Zc'jj]
+r R
+*jIe
+EmphasisA
+Strikethroug
+Underlin
+Italic
+O.f
+Red
+]fR
+J2l
+Whit
+Times-Roman
+6VJ
+.VL
+;VD
+/VQ
+PA*
+Courier!,
+eUU
+cCm
+DocumentStylesheet"
+!XL
+áFZ
+;H"
+EvL
+fXy
+!z(
+ý_Z
+9HI
+8XP
+_Au
+E    X
+I    D
+9tj
+;Dp
+)@Dl
+VXZ
+:X,
+YDD
+XHb
+0UZ
+E+H
+8!X
+ekL
+uXw
+tDu
+EYX
+9D"
+0=Z
+9Hu
+:Dz
+-1740433"6L9
+-17320802O
+Calcul
+Engine
+12C
+Hi:
+o;D
+&*H
+!"L
+á+Z
+!zD
+EH_
+*#ginger/00b_theme/tile6+
+bullN
+E@6
+5q5Hia
+0black.png"
+V(*
+DB+
+fB+
