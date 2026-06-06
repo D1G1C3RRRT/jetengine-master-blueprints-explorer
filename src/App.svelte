@@ -7,6 +7,7 @@
   let selectedBlueprintKey = null;
   let selectedTab = 'visual'; // 'visual' or 'raw'
   let activeFilter = 'all';
+  let showMobileDetail = false; // Toggle view on mobile devices
 
   // Map files to user-friendly metadata
   const blueprintMeta = {
@@ -263,11 +264,7 @@
 
   function selectBlueprint(key) {
     selectedBlueprintKey = key;
-    if (window.innerWidth < 1024) {
-      setTimeout(() => {
-        document.getElementById('blueprint-detail')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
+    showMobileDetail = true;
   }
 
   // Helper to group fields by their group names
@@ -307,7 +304,7 @@
   </header>
 
   <!-- Content Grid -->
-  <div class="content-grid">
+  <div class="content-grid {showMobileDetail ? 'mobile-show-detail' : 'mobile-show-sidebar'}">
     
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -373,6 +370,11 @@
     <!-- Detail Area -->
     <section id="blueprint-detail" class="detail-container">
       {#if selectedBlueprint}
+        <!-- Back button for mobile view -->
+        <button class="mobile-back-btn" on:click={() => showMobileDetail = false}>
+          ← Späť na zoznam
+        </button>
+
         <div class="detail-panel">
           
           <!-- Detail Header -->
