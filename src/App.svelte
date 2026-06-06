@@ -1,280 +1,55 @@
 <script>
   import { onMount } from 'svelte';
-  import rawBlueprints from './data/blueprints.json';
+  import blueprints from './data/blueprints.json';
 
   // State
   let searchQuery = '';
   let selectedBlueprintKey = null;
-  let selectedTab = 'visual'; // 'visual' or 'raw'
+  let selectedTab = 'visual'; // 'visual' or 'json'
   let activeFilter = 'all';
-  let showMobileDetail = false; // Toggle view on mobile devices
-
-  // Map files to user-friendly metadata
-  const blueprintMeta = {
-    'blueprints.pages': {
-      title: 'JetEngine Master Template System',
-      description: 'Kompletný znovupoužiteľný meta systém pre 20 produktových demo webov.',
-      category: 'Core',
-      gradient: 'linear-gradient(135deg, #3b82f6, #6366f1)',
-      icon: '🧠'
-    },
-    'universalny back.pages': {
-      title: 'Super-Univerzálny Backend',
-      description: 'Základná databázová architektúra (8 jadrových entít) pre akýkoľvek dynamic web.',
-      category: 'Core',
-      gradient: 'linear-gradient(135deg, #8b5cf6, #d946ef)',
-      icon: '⚡'
-    },
-    '20webblueprints AI.pages': {
-      title: '20 Webových Blueprintov',
-      description: 'Sada 20 webových konceptov od trhovísk po zložité rezervačné systémy.',
-      category: 'Core',
-      gradient: 'linear-gradient(135deg, #ec4899, #f43f5e)',
-      icon: '📐'
-    },
-    'bigmarketplace.pages': {
-      title: 'Veľké Digitálne Trhovisko',
-      description: 'Kompletná logická štruktúra pre B2C + B2B trhovisko, retail a veľkoobchod.',
-      category: 'Marketplace',
-      gradient: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
-      icon: '🛒'
-    },
-    'marketplace.pages': {
-      title: 'Digitálne Trhovisko (Creator / Retail)',
-      description: 'Predaj digitálnych produktov, služieb, stánkov a správa objednávok.',
-      category: 'Marketplace',
-      gradient: 'linear-gradient(135deg, #14b8a6, #10b981)',
-      icon: '🛍️'
-    },
-    'realestate.pages': {
-      title: 'Realitný Web & Kancelária',
-      description: 'Architektúra pre maklérov, ponuky nehnuteľností, predaje, prenájmy a projekty.',
-      category: 'Real Estate',
-      gradient: 'linear-gradient(135deg, #f59e0b, #ea580c)',
-      icon: '🏠'
-    },
-    'travels.pages': {
-      title: 'Travel & Ubytovanie',
-      description: 'Dovolenky, destinácie, zájazdy, ubytovanie a kapacity.',
-      category: 'Directory',
-      gradient: 'linear-gradient(135deg, #0ea5e9, #6366f1)',
-      icon: '✈️'
-    },
-    'startupy.pages': {
-      title: 'Startup & Crowdfunding',
-      description: 'Minimalistická schéma pre startup platformy, investovanie a kampane.',
-      category: 'Fundraising',
-      gradient: 'linear-gradient(135deg, #10b981, #06b6d4)',
-      icon: '🚀'
-    },
-    'raising.pages': {
-      title: 'Digital Fundraising & Kampane',
-      description: 'Architektúra MVP pre enterprise organizácie, charity-only aj startup fundraising.',
-      category: 'Fundraising',
-      gradient: 'linear-gradient(135deg, #a855f7, #ec4899)',
-      icon: '💖'
-    },
-    'online magazine.pages': {
-      title: 'Online Magazín & Journal',
-      description: 'Univerzálny model pre spravodajstvo, portál, blogy, autorov a články.',
-      category: 'Content',
-      gradient: 'linear-gradient(135deg, #2563eb, #06b6d4)',
-      icon: '📰'
-    },
-    'Booking-Shop-Structure.pages': {
-      title: 'Booking Shop & Rezervácie',
-      description: 'Všeobecný model pre rezervácie služieb, produktov a termínov.',
-      category: 'Booking',
-      gradient: 'linear-gradient(135deg, #f97316, #f43f5e)',
-      icon: '📅'
-    },
-    'Buseness-Web-Structure.pages': {
-      title: 'Business & Corporate Web',
-      description: 'Jednoduchá firemná prezentácia: služby, referencie, blog, kontakt.',
-      category: 'Content',
-      gradient: 'linear-gradient(135deg, #6366f1, #a855f7)',
-      icon: '🏢'
-    },
-    'ostatnetypyjobevent.pages': {
-      title: 'Case Studies & Moduly',
-      description: 'Doplnkové moduly ako B2B referencie, Lead manažment a Job Events.',
-      category: 'Core',
-      gradient: 'linear-gradient(135deg, #d946ef, #f43f5e)',
-      icon: '🧱'
-    },
-    'typy-webov.pages': {
-      title: 'Klasifikácia Typov Webov',
-      description: 'Prehľad a štruktúra základných typov webov na webe.',
-      category: 'Directory',
-      gradient: 'linear-gradient(135deg, #059669, #10b981)',
-      icon: '📊'
-    },
-    'dta.pages': {
-      title: 'SaaS Podnikateľské Modely',
-      description: 'Príklady architektúr ako Notion, Shopify, Canva.',
-      category: 'Core',
-      gradient: 'linear-gradient(135deg, #475569, #1e293b)',
-      icon: '💡'
-    }
-  };
+  let showMobileDetail = false;
 
   const categories = ['all', 'Core', 'Marketplace', 'Real Estate', 'Directory', 'Fundraising', 'Booking', 'Content'];
 
-  // Identify field type based on keywords
-  function getFieldType(fieldName) {
-    const fn = fieldName.toLowerCase();
-    if (fn.includes('image') || fn.includes('galer') || fn.includes('logo') || fn.includes('screenshot') || fn.includes('img') || fn.includes('foto')) return 'Obrázok / Galéria';
-    if (fn.includes('price') || fn.includes('cena') || fn.includes('budget') || fn.includes('amount') || fn.includes('raised') || fn.includes('target') || fn.includes('finance')) return 'Číslo / Menový formát';
-    if (fn.includes('date') || fn.includes('datum') || fn.includes('duration') || fn.includes('trvanie')) return 'Dátum / Čas';
-    if (fn.includes('id') || fn.includes('slug') || fn.includes('cct') || fn.includes('cpt')) return 'Systémový kľúč / ID';
-    if (fn.includes('status') || fn.includes('stav') || fn.includes('type') || fn.includes('typ')) return 'Výber (Select / Enum)';
-    if (fn.includes('email') || fn.includes('phone') || fn.includes('tel') || fn.includes('kontakt') || fn.includes('mess')) return 'Kontaktné info';
-    return 'Textové pole';
+  // Type badge styling helper
+  function getFieldTypeBadge(type) {
+    const t = type.toLowerCase();
+    if (t === 'number') return 'badge-number';
+    if (t === 'date') return 'badge-date';
+    if (t === 'text') return 'badge-text';
+    return 'badge-generic';
   }
 
-  // Improved strict parser for cleaner extraction and better UI model representation
-  function parseBlueprint(lines) {
-    let pages = [];
-    let cpts = [];
-    let currentCpt = null;
-    let currentGroup = 'Všeobecné';
-    let mode = 'general';
-    let generalNotes = [];
-
-    for (let line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed) continue;
-
-      const lower = trimmed.toLowerCase();
-      if (lower === 'stránky' || lower === 'pages' || lower === 'stranky') {
-        mode = 'pages';
-        continue;
-      }
-      if (trimmed.startsWith('CPT:') || trimmed.startsWith('CCT:')) {
-        mode = 'cpt';
-        const parts = trimmed.split(':');
-        currentCpt = {
-          type: parts[0].trim(),
-          name: parts[1] ? parts[1].trim() : '',
-          slug: '',
-          fields: [],
-          relations: []
-        };
-        cpts.push(currentCpt);
-        currentGroup = 'Základné polia';
-        continue;
-      }
-      if (lower.startsWith('slug:')) {
-        if (currentCpt) {
-          currentCpt.slug = trimmed.substring(5).trim();
-        }
-        continue;
-      }
-      if (lower === 'meta' || lower === 'meta fields' || lower === 'fields') {
-        mode = 'meta';
-        continue;
-      }
-      if (lower === 'vzťahy' || lower === 'relations' || lower === 'relácie' || lower === 'väzby') {
-        mode = 'relations';
-        continue;
-      }
-
-      const isListItem = trimmed.startsWith('-') || trimmed.startsWith('*') || /^\d+\./.test(trimmed);
-      const cleanLine = trimmed.replace(/^[-*\d\.]\s*/, '');
-
-      if (mode === 'pages') {
-        if (trimmed.includes('.') && (trimmed.endsWith('.png') || trimmed.endsWith('.jpg') || trimmed.endsWith('.pdf'))) {
-          continue;
-        }
-        pages.push(cleanLine);
-      } else if (mode === 'meta') {
-        if (currentCpt) {
-          if (trimmed.length < 25 && /^[A-ZÁÄČĎÉÍĹĽŇÓÔŔŠŤÚÝŽ]/.test(trimmed) && !trimmed.includes(':') && isNaN(trimmed[0])) {
-            currentGroup = trimmed;
-          } else {
-            let fieldName = trimmed;
-            let typeLabel = getFieldType(trimmed);
-            
-            if (trimmed.includes(':')) {
-              const parts = trimmed.split(':');
-              fieldName = parts[0].trim();
-              typeLabel = parts[1].trim();
-            }
-            
-            currentCpt.fields.push({
-              group: currentGroup,
-              name: fieldName,
-              type: typeLabel
-            });
-          }
-        } else {
-          generalNotes.push({ text: cleanLine, isListItem });
-        }
-      } else if (mode === 'relations') {
-        if (currentCpt) {
-          currentCpt.relations.push(cleanLine);
-        } else {
-          generalNotes.push({ text: cleanLine, isListItem });
-        }
-      } else {
-        generalNotes.push({ text: cleanLine, isListItem });
-      }
-    }
-
-    generalNotes = generalNotes.filter(n => !n.text.includes('.png') && !n.text.includes('.jpg') && !n.text.includes('.pdf') && n.text.length > 2);
-
-    return { pages, cpts, generalNotes };
+  // Type label helper
+  function getFieldTypeLabel(type) {
+    const t = type.toLowerCase();
+    if (t === 'number') return 'Číslo';
+    if (t === 'date') return 'Dátum';
+    if (t === 'text') return 'Text';
+    return type;
   }
-
-  // Reactive listings
-  $: blueprints = Object.entries(rawBlueprints).map(([key, lines]) => {
-    const meta = blueprintMeta[key] || {
-      title: key.replace('.pages', ''),
-      description: 'Základná štruktúra webovej aplikácie.',
-      category: 'General',
-      gradient: 'linear-gradient(135deg, #475569, #334155)',
-      icon: '⚙️'
-    };
-    
-    return {
-      key,
-      ...meta,
-      parsed: parseBlueprint(lines),
-      rawLines: lines
-    };
-  });
 
   $: filteredBlueprints = blueprints.filter(bp => {
-    const matchesSearch = bp.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const matchesSearch = bp.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           bp.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          bp.rawLines.some(line => line.toLowerCase().includes(searchQuery.toLowerCase()));
+                          JSON.stringify(bp.data).toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesFilter = activeFilter === 'all' || bp.category === activeFilter;
     
     return matchesSearch && matchesFilter;
   });
 
-  $: selectedBlueprint = blueprints.find(bp => bp.key === selectedBlueprintKey);
+  $: selectedBlueprint = blueprints.find(bp => bp.name === selectedBlueprintKey);
 
   onMount(() => {
     if (blueprints.length > 0) {
-      selectedBlueprintKey = blueprints[0].key;
+      selectedBlueprintKey = blueprints[0].name;
     }
   });
 
   function selectBlueprint(key) {
     selectedBlueprintKey = key;
     showMobileDetail = true;
-  }
-
-  // Helper to group fields by their group names
-  function getGroupedFields(fields) {
-    const groups = {};
-    fields.forEach(f => {
-      if (!groups[f.group]) groups[f.group] = [];
-      groups[f.group].push(f);
-    });
-    return Object.entries(groups);
   }
 </script>
 
@@ -297,7 +72,7 @@
           <span class="status-dot"></span> Offline Ready
         </span>
         <span class="status-badge version-badge">
-          PWA v1.2.0
+          PWA v2.0.0
         </span>
       </div>
     </div>
@@ -339,8 +114,8 @@
       <div class="blueprint-list">
         {#each filteredBlueprints as bp}
           <button 
-            on:click={() => selectBlueprint(bp.key)}
-            class="blueprint-card {selectedBlueprintKey === bp.key ? 'active' : ''}"
+            on:click={() => selectBlueprint(bp.name)}
+            class="blueprint-card {selectedBlueprintKey === bp.name ? 'active' : ''}"
           >
             <div class="card-inner">
               <div class="card-icon" style="background: {bp.gradient}">
@@ -348,13 +123,16 @@
               </div>
               <div class="card-info">
                 <div class="card-header-row">
-                  <h3 class="card-title">{bp.title}</h3>
+                  <h3 class="card-title">{bp.name}</h3>
                   <span class="card-cat-badge">{bp.category}</span>
                 </div>
                 <p class="card-desc">{bp.description}</p>
                 <div class="card-stats">
-                  <span>📂 {bp.parsed.pages.length} Stránok</span>
-                  <span>📦 {bp.parsed.cpts.length} Entít</span>
+                  <span>📦 {bp.data.cpt?.length || 0} CPT</span>
+                  <span>⚙️ {bp.data.cct?.length || 0} CCT</span>
+                  {#if bp.data.relations?.length}
+                    <span>🔗 {bp.data.relations.length} Relácií</span>
+                  {/if}
                 </div>
               </div>
             </div>
@@ -384,8 +162,8 @@
                 {selectedBlueprint.icon}
               </div>
               <div>
-                <h2 class="detail-title">{selectedBlueprint.title}</h2>
-                <p class="detail-subtitle">{selectedBlueprint.key}</p>
+                <h2 class="detail-title">{selectedBlueprint.name}</h2>
+                <p class="detail-subtitle">{selectedBlueprint.description}</p>
               </div>
             </div>
 
@@ -395,115 +173,175 @@
                 on:click={() => selectedTab = 'visual'}
                 class="tab-btn {selectedTab === 'visual' ? 'active' : ''}"
               >
-                Vizuálna schémá
+                Vizuálna Schéma
               </button>
               <button 
-                on:click={() => selectedTab = 'raw'}
-                class="tab-btn {selectedTab === 'raw' ? 'active' : ''}"
+                on:click={() => selectedTab = 'json'}
+                class="tab-btn {selectedTab === 'json' ? 'active' : ''}"
               >
-                Raw Riadky
+                Raw JSON
               </button>
             </div>
           </div>
 
-          <!-- Tab Content: Visual -->
+          <!-- Tab Content: Visual ER-Diagram -->
           {#if selectedTab === 'visual'}
-            <!-- Goals / Spec -->
-            {#if selectedBlueprint.parsed.generalNotes.length > 0}
+            
+            <!-- Settings panel (if present) -->
+            {#if selectedBlueprint.data.settings && Object.keys(selectedBlueprint.data.settings).length > 0}
               <div class="info-block">
-                <h4 class="block-title">Ciele a špecifikácia</h4>
-                <div class="info-content">
-                  {#each selectedBlueprint.parsed.generalNotes as note}
-                    {#if note.isListItem}
-                      <div class="bullet-item">
-                        <span class="bullet-dot">•</span>
-                        <p>{note.text}</p>
-                      </div>
-                    {:else}
-                      <p class="paragraph-text">{note.text}</p>
-                    {/if}
-                  {/each}
-                </div>
-              </div>
-            {/if}
-
-            <!-- Pages Structure -->
-            {#if selectedBlueprint.parsed.pages.length > 0}
-              <div class="pages-block">
-                <h4 class="block-title">Navrhovaná štruktúra stránok</h4>
-                <div class="pages-tags">
-                  {#each selectedBlueprint.parsed.pages as page}
-                    <div class="page-tag">
-                      <span class="page-tag-icon">📂</span> {page}
+                <h4 class="block-title">Globálne nastavenia (Settings)</h4>
+                <div class="settings-grid">
+                  {#each Object.entries(selectedBlueprint.data.settings) as [key, val]}
+                    <div class="setting-item">
+                      <span class="setting-key">{key}</span>
+                      <span class="setting-val">{val}</span>
                     </div>
                   {/each}
                 </div>
               </div>
             {/if}
 
-            <!-- Entities & Fields -->
-            {#if selectedBlueprint.parsed.cpts.length > 0}
-              <div class="entities-block">
-                <h4 class="block-title">Databázový Model & Entity</h4>
+            <!-- UI home sections wireframe preview -->
+            {#if selectedBlueprint.data.ui && selectedBlueprint.data.ui.home}
+              <div class="wireframe-block">
+                <h4 class="block-title">Home Page Wireframe (UI)</h4>
+                <p class="wireframe-desc">Vykreslená logická štruktúra domovskej stránky:</p>
+                <div class="wireframe-screen">
+                  <div class="wireframe-header">
+                    <div class="wireframe-dot"></div>
+                    <div class="wireframe-dot"></div>
+                    <div class="wireframe-dot"></div>
+                  </div>
+                  <div class="wireframe-body">
+                    {#each selectedBlueprint.data.ui.home as section}
+                      <div class="wireframe-section-card">
+                        <span class="wireframe-section-icon">⚡</span>
+                        <span class="wireframe-section-name">{section} section</span>
+                      </div>
+                    {/each}
+                  </div>
+                </div>
+              </div>
+            {/if}
+
+            <!-- Entities Grid -->
+            <div class="entities-block">
+              <h4 class="block-title">Databázová Architektúra</h4>
+              
+              <div class="entities-grid">
                 
-                <div class="entities-grid">
-                  {#each selectedBlueprint.parsed.cpts as cpt}
-                    <div class="entity-card">
-                      <!-- Entity Header -->
+                <!-- CPT Entities -->
+                {#if selectedBlueprint.data.cpt && selectedBlueprint.data.cpt.length > 0}
+                  {#each selectedBlueprint.data.cpt as cpt}
+                    <div class="entity-card border-cpt">
                       <div class="entity-header">
                         <div class="entity-type-group">
-                          <span class="entity-type-badge {cpt.type.toLowerCase() === 'cpt' ? 'badge-cpt' : 'badge-cct'}">{cpt.type}</span>
+                          <span class="entity-type-badge badge-cpt">CPT</span>
                           <span class="entity-name">{cpt.name}</span>
                         </div>
-                        {#if cpt.slug}
-                          <span class="entity-slug">slug: <code>{cpt.slug}</code></span>
-                        {/if}
                       </div>
 
-                      <!-- Grouped Custom Fields -->
-                      {#if cpt.fields.length > 0}
+                      {#if cpt.fields && cpt.fields.length > 0}
                         <div class="fields-section">
-                          {#each getGroupedFields(cpt.fields) as [groupName, groupFields]}
-                            <div class="field-group-container">
-                              <span class="field-group-title">{groupName}</span>
-                              <div class="fields-grid-rows">
-                                {#each groupFields as field}
-                                  <div class="field-row">
-                                    <span class="field-name-text">{field.name}</span>
-                                    <span class="field-type-badge">{field.type}</span>
-                                  </div>
-                                {/each}
-                              </div>
-                            </div>
-                          {/each}
-                        </div>
-                      {/if}
-
-                      <!-- Relations -->
-                      {#if cpt.relations.length > 0}
-                        <div class="entity-relations">
-                          <span class="fields-header">Väzby a prepojenia</span>
-                          <div class="relations-list">
-                            {#each cpt.relations as rel}
-                              <div class="relation-item">
-                                <span class="relation-icon">🔗</span> {rel}
+                          <span class="fields-header">Custom Fields</span>
+                          <div class="fields-grid-rows">
+                            {#each cpt.fields as field}
+                              <div class="field-row">
+                                <span class="field-name-text">{field.name}</span>
+                                <span class="field-type-badge {getFieldTypeBadge(field.type)}">
+                                  {getFieldTypeLabel(field.type)}
+                                </span>
                               </div>
                             {/each}
                           </div>
                         </div>
+                      {:else}
+                        <p class="no-fields-text">Žiadne custom meta polia.</p>
                       {/if}
+                    </div>
+                  {/each}
+                {/if}
+
+                <!-- CCT Entities -->
+                {#if selectedBlueprint.data.cct && selectedBlueprint.data.cct.length > 0}
+                  {#each selectedBlueprint.data.cct as cct}
+                    <div class="entity-card border-cct">
+                      <div class="entity-header">
+                        <div class="entity-type-group">
+                          <span class="entity-type-badge badge-cct">CCT</span>
+                          <span class="entity-name">{cct.name}</span>
+                        </div>
+                      </div>
+
+                      {#if cct.fields && cct.fields.length > 0}
+                        <div class="fields-section">
+                          <span class="fields-header">Custom Fields</span>
+                          <div class="fields-grid-rows">
+                            {#each cct.fields as field}
+                              <div class="field-row">
+                                <span class="field-name-text">{field.name}</span>
+                                <span class="field-type-badge {getFieldTypeBadge(field.type)}">
+                                  {getFieldTypeLabel(field.type)}
+                                </span>
+                              </div>
+                            {/each}
+                          </div>
+                        </div>
+                      {:else}
+                        <p class="no-fields-text">Žiadne custom meta polia.</p>
+                      {/if}
+                    </div>
+                  {/each}
+                {/if}
+
+                <!-- Taxonomies -->
+                {#if selectedBlueprint.data.taxonomies && selectedBlueprint.data.taxonomies.length > 0}
+                  {#each selectedBlueprint.data.taxonomies as tax}
+                    <div class="entity-card border-tax">
+                      <div class="entity-header">
+                        <div class="entity-type-group">
+                          <span class="entity-type-badge badge-tax">Taxonomy</span>
+                          <span class="entity-name">{tax.name}</span>
+                        </div>
+                      </div>
+                      <div class="fields-section">
+                        <span class="fields-header">Prepojené s typmi (post_types)</span>
+                        <div class="tax-linked-types">
+                          {#each tax.post_types as pt}
+                            <span class="tax-pt-tag">{pt}</span>
+                          {/each}
+                        </div>
+                      </div>
+                    </div>
+                  {/each}
+                {/if}
+
+              </div>
+            </div>
+
+            <!-- Relations Map -->
+            {#if selectedBlueprint.data.relations && selectedBlueprint.data.relations.length > 0}
+              <div class="relations-block">
+                <h4 class="block-title">Relations Layer (Vzťahy medzi entitami)</h4>
+                <div class="relations-list-box">
+                  {#each selectedBlueprint.data.relations as rel}
+                    <div class="relation-row-visual">
+                      <div class="relation-entity-node entity-cpt">{rel.from}</div>
+                      <div class="relation-connector-line">
+                        <span class="relation-connector-label">🔗 relation</span>
+                      </div>
+                      <div class="relation-entity-node entity-tax">{rel.to}</div>
                     </div>
                   {/each}
                 </div>
               </div>
             {/if}
 
-          <!-- Tab Content: Raw Lines -->
+          <!-- Tab Content: Raw JSON -->
           {:else}
             <div class="raw-lines-container">
-              {#each selectedBlueprint.rawLines as line}
-                <div class="raw-line">{line}</div>
-              {/each}
+              <pre class="json-pre"><code>{JSON.stringify(selectedBlueprint.data, null, 2)}</code></pre>
             </div>
           {/if}
 
